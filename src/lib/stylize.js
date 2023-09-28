@@ -1,15 +1,18 @@
 // from https://github.com/ozh/github-colors/blob/master/colors.json
 
 export const COLORS = {
-	JavaScript: '#f1e05a',
-	Java: '#b07219',
-	'Node.js': '#f1e05a',
-	Vue: '#41b883',
-	Svelte: '#ff3e00',
-	'GitHub Pages': '#4183c4',
+	JavaScript: '#F1E05A',
+	Java: '#B07219',
+	'Node.js': '#F1E05A',
+	Vue: '#41B883',
+	Svelte: '#FF3E00',
+	'GitHub Pages': '#4183C4',
 	Go: '#00ADD8',
 	Python: '#3572A5',
-	Rust: '#dea584',
+	Rust: '#DEA584',
+	MongoDB: '#4DB33D',
+	Firebase: '#FFA000',
+	'React Native': '#61DAFB',
 };
 
 export const stylize = str => {

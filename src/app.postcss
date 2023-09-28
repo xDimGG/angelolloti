@@ -17,6 +17,10 @@
 	font-family: Roboto;
 }
 
+[data-animate-up]:not(.animate__animated), [data-animate-left]:not(.animate__animated) {
+	visibility: hidden;
+}
+
 body {
 	height: 100vh;
 }
@@ -25,9 +29,16 @@ body {
 	background-image: linear-gradient(#191919 3px, transparent 3px), linear-gradient(to right, #191919 3px, transparent 3px);
 	background-size: 30px 30px;
 	background-color: #1b1b1b;
+	height: 100vh;
+	overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
-.odd {
+.sections > div {
+  scroll-snap-align: start;
+}
+
+.sections > div:nth-child(odd) {
 	z-index: 1;
 	background-color: #ffffff0a;
 	box-shadow: 0 0 80px 100px #ffffff0a;
@@ -52,60 +63,6 @@ body {
 
 .animation-4 {
 	animation-delay: 2700ms;
-}
-
-.mini-view {
-	transform: scale(0.1);
-	transform-origin: top right;
-	position: fixed;
-	overflow: hidden;
-	width: 100vw;
-	top: 15px;
-	right: 15px;
-	opacity: 0.75;
-	transition: opacity 200ms;
-	cursor: pointer;
-	user-select: none;
-	z-index: 2;
-	--scrollbar-offset: 0;
-	--hover-scrollbar-offset: 0;
-}
-
-.mini-view * {
-	pointer-events: none;
-	animation: none;
-	transition: none;
-	opacity: 1;
-}
-
-.mini-view:hover {
-	opacity: 0.95;
-}
-
-.mini-view:hover::before {
-	display: block;
-}
-
-.mini-view::after {
-	content: '';
-	position: absolute;
-	display: block;
-	top: var(--scrollbar-offset);
-	width: 100vw;
-	height: 100vh;
-	background-color: rgba(255, 255, 255, 0.2);
-	z-index: 9999;
-}
-
-.mini-view::before {
-	content: '';
-	position: absolute;
-	display: none;
-	top: var(--hover-scrollbar-offset);
-	width: 100vw;
-	height: 100vh;
-	background-color: rgba(255, 255, 255, 0.05);
-	z-index: 9999;
 }
 
 @media (hover: hover) and (min-width: 768px) {
