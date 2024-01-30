@@ -13,9 +13,9 @@ const posts = new Map(readdirSync(DIR).map(f => {
 	return [id, { ...data, content: marked.parse(md.join('---\n')) }];
 }));
 
-export const load = async ({ params: { slug } }) => {
-	if (posts.has(slug))
-		return posts.get(slug);
+export const load = async ({ params: { id } }) => {
+	if (posts.has(id))
+		return posts.get(id);
 
 	error(404, 'Not found');
 }

@@ -1,6 +1,7 @@
 {
 	"title": "Who is Angelo Lloti?",
-	"date": 1706565915390
+	"date": 1706565915390,
+	"tags": ["life", "self"]
 }
 ---
 

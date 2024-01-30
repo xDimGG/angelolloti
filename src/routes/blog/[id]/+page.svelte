@@ -11,11 +11,16 @@ export let data;
 		<div class="flex justify-between">
 			<h1 class="mb-0">{data.title}</h1>
 			<div class="text-white block text-xs text-right text-opacity-50 shrink-0 ml-2">
+				<a href="/blog/" class="text-white block no-underline hover:underline">other posts</a>
 				<span>
-					{new Date(data.date).toDateString().split(' ').slice(1).join(' ')}
+					{new Date(data.date).toLocaleDateString()}
 				</span>
 				<br>
-				<a href="/blog/" class="text-white text-opacity-50 pt-2 block">other stuff</a>
+				<span>tags:
+					{#each data.tags.sort() as tag, i}
+						<a href="/blog/?tag={tag}" class="no-underline hover:underline">{tag}</a>{i === data.tags.length - 1 ? '' : ', '}
+					{/each}
+				</span>
 			</div>
 		</div>
 
