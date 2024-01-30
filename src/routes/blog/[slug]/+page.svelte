@@ -2,6 +2,10 @@
 export let data;
 </script>
 
+<svelte:head>
+<title>{data.title}</title>
+</svelte:head>
+
 <div class="min-h-screen w-screen px-3 dark:bg-slate-900 py-8">
 	<div class="prose prose-img:max-h-[80vh] lg:max-w-[1000px] prose-gray  dark:prose-invert mx-auto">
 		<div class="flex justify-between">

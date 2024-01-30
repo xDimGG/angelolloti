@@ -6,6 +6,7 @@ export let data;
 <link rel="alternate" type="application/rss+xml" 
   title="RSS feed for Angelo Lloti's blog" 
   href="/rss.xml" />
+<title>Angelo Lloti's Blog</title>
 </svelte:head>
 
 <div class="h-screen w-screen px-3 dark:bg-slate-900">
