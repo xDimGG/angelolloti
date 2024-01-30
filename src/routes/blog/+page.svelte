@@ -1,8 +1,9 @@
 <script>
 export let data;
 import { page } from '$app/stores';
+import { browser } from '$app/environment';
 
-$: tag = $page.url.searchParams.get('tag');
+$: tag = browser ? $page.url.searchParams.get('tag') : '';
 $: posts = tag ? data.posts.filter(p => p.tags.includes(tag)) : data.posts;
 </script>
 
