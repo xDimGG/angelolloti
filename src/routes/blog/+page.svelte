@@ -25,11 +25,11 @@ $: posts = tag ? data.posts.filter(p => p.tags.includes(tag)) : data.posts;
 		<ul class="marker:text-white">
 			{#each posts as { id, title, date, tags }}
 			<li class="text-lg">
-				<a href="/blog/{id}">{title}</a>
+				<a href="/blog/{id}/">{title}</a>
 				<span class="text-slate-400 dark:text-opacity-30 dark:text-white text-xs align-middle">{
 					'('}{#each tags.sort() as tag, i}
-						<a href="/blog/?tag={tag}">{tag}</a>{i === tags.length - 1 ? '' : ', '}
-					{/each}; {new Date(date).toLocaleDateString()})</span>
+						<a href="/blog/?tag={tag}">{tag}</a>{i === tags.length - 1 ? '' : ', '
+					}{/each}; {new Date(date).toLocaleDateString()})</span>
 			</li>
 			{/each}
 		</ul>
