@@ -8,7 +8,7 @@ export let data;
   href="/rss.xml" />
 </svelte:head>
 
-<div class="h-screen w-screen dark:bg-slate-900">
+<div class="h-screen w-screen px-3 dark:bg-slate-900">
 	<div class="container lg:max-w-[1000px] mx-auto dark:text-white">
 		<span class="block text-4xl py-5">Angelo's Blog</span>
 		<ul class="list-disc list-inside">
