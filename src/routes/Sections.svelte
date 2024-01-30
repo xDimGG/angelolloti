@@ -26,7 +26,7 @@ onMount(async () => {
 
 	fetch('https://gh-pinned-repos.egoist.dev/?username=xdimgg')
 		.then(res => res.json())
-		.then(j => pinned = j)
+		.then(j => pinned = j.length > 1 ? j : fallbackPinned)
 		.catch(() => pinned = fallbackPinned);
 });
 
@@ -38,6 +38,9 @@ register();
 
 <div class="sections">
 	<div class="h-screen flex flex-col items-center">
+		<div class="w-full text-right">
+			<a class="text-white bg-green-400 bg-opacity-75 underline text-lg py-1 px-2 rounded-bl-md" href="/blog">blog</a>
+		</div>
 		<div class="w-full mx-auto flex-grow flex flex-col-reverse md:flex-row items-center justify-center md:justify-around">
 			<div>
 				<!-- padding to vertically center Angelo Lloti -->

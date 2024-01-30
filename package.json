@@ -23,6 +23,8 @@
   },
   "type": "module",
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "marked": "^11.2.0",
     "swiper": "^10.2.0"
   }
 }
