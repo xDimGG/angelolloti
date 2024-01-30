@@ -19,5 +19,3 @@ export const load = async ({ params: { slug } }) => {
 
 	error(404, 'Not found');
 }
-
-// export const prerender = true;

@@ -2,6 +2,12 @@
 export let data;
 </script>
 
+<svelte:head>
+<link rel="alternate" type="application/rss+xml" 
+  title="RSS feed for Angelo Lloti's blog" 
+  href="/rss.xml" />
+</svelte:head>
+
 <div class="h-screen w-screen dark:bg-slate-900">
 	<div class="container lg:max-w-[1000px] mx-auto dark:text-white">
 		<span class="block text-4xl py-5">Angelo's Blog</span>
