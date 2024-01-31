@@ -10,17 +10,17 @@ export let data;
 	<div class="prose prose-img:max-h-[80vh] prose-gray dark:prose-invert lg:max-w-[1000px] mx-auto">
 		<div class="flex justify-between">
 			<h1 class="mb-0">{data.title}</h1>
-			<div class="text-white block text-xs text-right text-opacity-50 shrink-0 ml-2">
-				<a href="/blog/" class="text-white block no-underline hover:underline">other posts</a>
-				<span>
+			<div class="text-slate-400 dark:text-white block text-xs text-right text-opacity-50 shrink-0 ml-2">
+				<a href="/blog/" class="block no-underline hover:underline">other posts</a>
+				<span class="text-slate-400">
 					{new Date(data.date).toLocaleDateString()}
 				</span>
 				<br>
-				<span>tags:
+				<span class="text-slate-400">tags:</span>
 					{#each data.tags.sort() as tag, i}
 						<a href="/blog/?tag={tag}" class="no-underline hover:underline">{tag}</a>{i === data.tags.length - 1 ? '' : ', '}
 					{/each}
-				</span>
+				
 			</div>
 		</div>
 

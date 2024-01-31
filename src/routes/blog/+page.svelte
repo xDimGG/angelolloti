@@ -19,7 +19,7 @@ $: posts = tag ? data.posts.filter(p => p.tags.includes(tag)) : data.posts;
 		<div class="flex justify-between">
 			<h1 class="block">Angelo's Blog</h1>
 			{#if tag}
-				<a href="/blog/" class="text-white block text-xs">clear filter</a>
+				<a href="/blog/" class="block text-xs">clear filter</a>
 			{/if}
 		</div>
 		<ul class="marker:text-white">
