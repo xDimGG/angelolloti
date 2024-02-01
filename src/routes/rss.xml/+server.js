@@ -32,3 +32,4 @@ export const GET = () => {
 };
 
 export const trailingSlash = 'never';
+export const prerender = true;
