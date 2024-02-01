@@ -11,4 +11,10 @@ export default [
 		description: 'A commercial website for a senior care center built using Svelte, Node.js, and GitHub Pages.',
 		image: '/hisc.png',
 	},
+	{
+		name: 'Recurse Eats',
+		href: 'https://recurse-eats.dim.codes/',
+		description: 'A website so that the people at Recurse Center can quickly see all the nearby BOGO deals that UberEats has to offer nearby.',
+		image: '/rc-eats.png',
+	},
 ];

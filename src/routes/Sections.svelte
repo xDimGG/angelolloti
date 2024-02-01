@@ -100,9 +100,9 @@ register();
 		</swiper-container>
 	</div>
 
-	<div class="h-screen container mx-auto text-gray-600 flex flex-col items-center">
-		<span class="text-5xl text-center sm:text-8xl w-full sm:w-auto sm:mt-10 mb-10 py-4 sm:px-20 text-black bg-white mix-blend-lighten font-bold" data-animate-left>My Projects</span>
-		<div class="h-full flex flex-wrap flex-col md:flex-row overflow-x-scroll mb-4" data-animate-up>
+	<div class="h-screen text-gray-600 flex flex-col items-center w-full">
+		<span class="text-5xl text-center sm:text-8xl sm:w-auto sm:mt-10 mb-10 py-4 sm:px-20 text-black bg-white mix-blend-lighten font-bold w-full" data-animate-left>My Projects</span>
+		<div class="h-full mx-auto flex flex-wrap flex-col md:flex-row overflow-x-scroll mb-4 container" data-animate-up>
 			{#each pinned as pin}
 				<div class="p-2 w-11/12 md:w-1/3">
 					<div class="h-full bg-slate-900 px-8 py-10 rounded-lg overflow-hidden text-center relative">

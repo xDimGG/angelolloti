@@ -8,4 +8,4 @@ export const load = async ({ params: { id } }) => {
 		return postMap.get(id);
 
 	error(404, 'Not found');
-}
+};

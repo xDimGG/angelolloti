@@ -54,7 +54,7 @@ Let's also take a look at the `Response` tab to see what data we're getting back
 
 As far as reverse engineering APIs goes, Air Premia is definitely on the easier side of things. All the parameters are clearly written out and the response is in neatly structured JSON data. There are still some guesses we have to make regarding the data that we can confirm by making more requests.
 
-So, in our request we have the obvious parameters `origin=EWR` and `destination=ICN`, both of which use IATA Location Identifiers (EWR for Newark Liberty International Airport and ICN for Incheon International Airport).
+So, in our request we have the obvious parameters `origin=EWR` and `destination=ICN`, both of which use [IATA Location Identifiers](https://en.wikipedia.org/wiki/IATA_airport_code) (EWR for Newark Liberty International Airport and ICN for Incheon International Airport).
 
 Then we have `tripType=RT`. We can guess that this means round-trip and verify this by selecting `One-way` from the UI and seeing that the request the browser sends contains `tripType=OW` instead.
 
