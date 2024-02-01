@@ -25,11 +25,11 @@ For starters, let me show you what searching for tickets on [Air Premia](https:/
 
 ![Air Premia calendar UI](/premia_1.png)
 
-Wowie, that's a lot of prices at once! After a bit of testing, you can only book flights up to 9 months in advance. After that, no more prices are shown.
+Wowie, that's a lot of prices at once! After a bit of exploration, I found that you can only book flights up to 9 months in advance. After that, no more prices are shown.
 
-### What is Happening
+### What is Happening?
 
-Well, when we click on the date selector or click on the arrows to load the next month, our browser is probably making an API request to get the prices given our parameters (departing from terminal, arriving at terminal, etc.). We can confirm that this is a case by opening up our Chrome developer tools and going to the network tab. With this tool, we can see every request that the current tab makes. Refreshing the page and choosing the same options as before, we are able to capture the following request.
+Well, when we click on the date selector or click on the arrows to load the next month, our browser is probably making an API request to get the prices given our parameters (departing from terminal, arriving at terminal, etc.). We can confirm that this is the case by opening up our Chrome developer tools and going to the network tab. With this tool, we can see every request that the current tab makes. Refreshing the page and choosing the same options as before, we are able to capture the following request.
 
 ![Air Premia API request](/premia_2.png)
 
@@ -52,11 +52,11 @@ Let's also take a look at the `Response` tab to see what data we're getting back
 
 ![Air Premia API response](/premia_3.png)
 
-As far as APIs go, Air Premia is definitely on the easier side. All the parameters are clearly written out and the response is in neatly structured JSON data. There are still some guesses we have to make regarding the data that we can confirm by making more requests.
+As far as reverse engineering APIs goes, Air Premia is definitely on the easier side of things. All the parameters are clearly written out and the response is in neatly structured JSON data. There are still some guesses we have to make regarding the data that we can confirm by making more requests.
 
-So, in our request we have the obvious parameters `origin=EWR` and `destination=ICN`, both of which use the IATA Location Identifiers (EWR for Newark Liberty International Airport and ICN for Incheon International Airport).
+So, in our request we have the obvious parameters `origin=EWR` and `destination=ICN`, both of which use IATA Location Identifiers (EWR for Newark Liberty International Airport and ICN for Incheon International Airport).
 
-Then we have `tripType=RT`. We can guess that this means round-trip and verify this by selecting `One-Way` from the UI and seeing that the request the browser sends contains `tripType=OW` instead.
+Then we have `tripType=RT`. We can guess that this means round-trip and verify this by selecting `One-way` from the UI and seeing that the request the browser sends contains `tripType=OW` instead.
 
 Next is `beginDate=2024-01-31` and `endDate=2024-02-29`. These are also pretty obvious, but it's worth making a note that the format of these dates is `YYYY-MM-DD`.
 
@@ -66,7 +66,7 @@ Finally, we also have `loyalty`, `fareTypes`, and `useCache`. These don't seem v
 
 ### Now What?
 
-Well, we figured out how the API works. Now, we need to write some code to make requests to these endpoints and store their data in some kind of data structure. I like working with [Jupyter Notebook](https://jupyter.org/) since it lets you hold onto variables while writing your code. Anyway, let's import requests, try making a get request to the endpoint with the same parameters as before, but just written out in a dict. `raise_for_status()` raises an error if our response has a bad status code. `json()` will just parse the response data in the JSON format.
+Well, we figured out how the API works. Now, we need to write some code to make requests to these endpoints and store their data in some kind of data structure. I like working with [Jupyter Notebook](https://jupyter.org/) since it lets you hold onto variables while writing your code. Anyway, let's import `requests` and try making a GET request to the endpoint with the same parameters as before, but just written out in a dictionary. `raise_for_status()` raises an error if our response has a bad status code. `json()` will just parse the response data in the JSON format.
 
 ```py
 import requests
@@ -86,7 +86,7 @@ res.raise_for_status()
 res.json()
 ```
 
-Running this code, we get back `HTTPError: 400 Client Error`. Annoying but not surprising. Client requests often require additional headers/cookies in order to work. In this case, after some guess and check of removing and adding headers, it turns out all we need is the `X-Content-ID` header. It doesn't even have to be set to anything... it just has to exist.
+Running this code, we get back `HTTPError: 400 Client Error`. Annoying but not unexpected. Client requests often require additional headers/cookies in order to work. In this case, after some guess and check of removing and adding headers, it turns out all we need is the `X-Content-ID` header. It doesn't even have to be set to anything... it just has to exist.
 
 ```diff
 ...
@@ -146,7 +146,7 @@ After running this code, our `dates` variable now contains this.
  '2024-10-31']
 ```
 
-Would it have been faster to type these out by hand? Yes, but it wouldn't have been as fun.
+Would it have been faster to type these out by hand? Yes, but it would not have been as fun.
 
 With this done, let's start iterating over all the date ranges and getting flight data for all the possible dates. Mind you, we want to query two months at a time. This means that we will have `2024-01-01 through 2024-02-29`, `2024-03-01 through 2024-04-30`, and so on. We are matching every even indexed element with every odd indexed element. To do this, we may use Python's [zip](https://docs.python.org/3/library/functions.html#zip) function and [array slicing](https://www.w3schools.com/python/numpy/numpy_array_slicing.asp).
 
@@ -154,7 +154,7 @@ With this done, let's start iterating over all the date ranges and getting fligh
 
 ![testing our use of zip](/premia_4.png)
 
-Pay attention to the `start, end` in our loop. Each value of `zip()` is returned as a tuple and we can use comma-separated variables to extract the tuple's individual parts. With this done, we may begin making our get requests. Let's just move our GET request to a function that takes some variables. If `trip_type` is RT, our method returns a tuple containg the flights to our destination and the return flights. If `trip_type` isn't RT, we return only flights going to our destination.
+Pay attention to the `start, end` in our loop. Each value of `zip()` is returned as a tuple and we can use comma-separated variables to extract the tuple's individual parts. With this done, we may begin making our GET requests. Let's just move our GET request to a function that takes some variables. If `trip_type` is RT, our method returns a tuple containg the flights to our destination and the return flights. If `trip_type` isn't RT, we return only flights going to our destination.
 
 ```py
 import requests
@@ -179,7 +179,7 @@ def fetch(trip_type, origin, destination, start_date, end_date, currency='USD'):
 	return (going, data[f'{destination}-{origin}']) if trip_type == 'RT' else going
 ```
 
-Now, let's write a function like `fetch` called `fetch_all` that takes `trip_type`, `origin`, `destination`, and `currency`, and returns every single available flight. Here, we take advantage of [concurrent.futures.ThreadPoolExecutor](https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor) to concurrently request all date ranges and compile them all into one or two arrays (depending on if `trip_type` is `RT` or `OW`). *Note: this whole OW/RT and value/2-tuple business and is very annoying to write code for. If you know a better way of doing this in python, please advise.*
+Now, let's write a function like `fetch` called `fetch_all` that takes `trip_type`, `origin`, `destination`, and `currency`, and returns every single available flight. Here, we take advantage of [concurrent.futures.ThreadPoolExecutor](https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor) to concurrently request all date ranges and compile them all into one or two arrays (depending on if `trip_type` is `RT` or `OW`). *Note: this whole OW/RT and value/2-tuple business and is very annoying to write code for. If you know a better way of doing this in Python, please advise.*
 
 ```py
 from concurrent.futures import ThreadPoolExecutor
@@ -201,7 +201,7 @@ def fetch_all(trip_type, origin, destination, currency='USD'):
 	return (going, coming) if trip_type == 'RT' else going
 ```
 
-This blog post is already getting pretty long. Let me just briefly cover what the rest of the code does. Here, we are taking our arrays, filtering out days which don't have prices, flattening the data, and converting the data to `pandas.DataFrame` objects. The benefit of using pandas is that we get access to a lot of methods to assess our data. *Note: we are using 'E' to represent economy. I mean, who'd go to this extent to save money just to fly premium.*
+This blog post is already getting pretty long. Let me just briefly cover what the rest of the code does. Here, we are taking our arrays, filtering out days which don't have prices, flattening the data, and converting the data to `pandas.DataFrame` objects. The benefit of using pandas is that we get access to a lot of methods to assess our data. *Note: we are using 'E' to represent economy. I mean, who'd go to this extent saving money but also fly premium.*
 
 ```py
 import pandas as pd
@@ -271,9 +271,9 @@ It seems like we have quite a few options that are all $1,078. Let's see if we g
 
 As it turns out, we can actually get tickets for $57 cheaper by just buying two one-way tickets instead of round-trip tickets. I had always assumed that round-trip tickets would be cheaper than two one-way tickets, but I guess that's not always the case.
 
-Mission complete, I guess. I still would like to plot some data so that we can get a sense for when tickets are cheaper and maybe uncover some other interesting patterns.
+Mission complete. I still would like to plot some data so that we can get a sense for when tickets are cheaper and maybe uncover some other interesting patterns.
 
-Now, let's import [matplotlib](https://matplotlib.org/) so that we can do some data visualization. I'm changing the default pyplot size and DPI to make the output wider and higher resolution.
+Let's import [matplotlib](https://matplotlib.org/) so that we can do some data visualization. I'm changing the default pyplot size and DPI to make the output wider and higher resolution.
 
 ```py
 from matplotlib import pyplot as plt
@@ -281,7 +281,7 @@ plt.rcParams['figure.figsize'] = (17, 4)
 plt.rcParams['figure.dpi'] = 200
 ```
 
-Let's start by showing the prices for different days. I'll split this into two charts. One for one-way trips and another for round-trips. Some of the bars will overlap one another but you can still see the general pattern which is what we're after. *Note: the code for round-trip tickets is almost identical.*
+Let's start by showing the prices for different days. I'll split this into two charts. One for one-way trips and another for round-trips. Some of the bars will overlap one another but you can still see the general pattern, which is what we're after. *Note: the code for round-trip tickets is almost identical.*
 
 ```py
 plt.title('USD Cost of One-way Economy Tickets')
