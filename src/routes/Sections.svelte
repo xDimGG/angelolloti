@@ -7,7 +7,7 @@ import { stylize } from '$lib/stylize';
 
 let pinned = [];
 
-const fallbackPinned = [{"owner":"xdimgg","repo":"node-steamapi","link":"https://github.com/xdimgg/node-steamapi","description":"An object-oriented Steam API wrapper for Node.js developers.","image":"https://opengraph.githubassets.com/1/xdimgg/node-steamapi","website":"https://www.npmjs.com/package/steamapi","language":"JavaScript","languageColor":"#f1e05a","stars":"148","forks":0},{"owner":"xdimgg","repo":"card-game","link":"https://github.com/xdimgg/card-game","description":"A bunch of card games all on one site for you to play with your friends. Built using Vue, Go, and WebSockets.","image":"https://opengraph.githubassets.com/1/xdimgg/card-game","website":"https://cg.dim.codes/","language":"Go","languageColor":"#00ADD8","stars":0,"forks":0},{"owner":"xdimgg","repo":"starboard","link":"https://github.com/xdimgg/starboard","description":"A starboard dedicated Discord bot.","image":"https://opengraph.githubassets.com/1/xdimgg/starboard","language":"Go","languageColor":"#00ADD8","stars":"22","forks":0},{"owner":"xdimgg","repo":"nn-rust","link":"https://github.com/xdimgg/nn-rust","description":"My attempt to create a multilayer neural network in Rust using stochastic gradient descent, backpropagation, and momentum.","image":"https://opengraph.githubassets.com/1/xdimgg/nn-rust","language":"Rust","languageColor":"#dea584","stars":0,"forks":0},{"owner":"xdimgg","repo":"os-scheduler","link":"https://github.com/xdimgg/os-scheduler","description":"An OS scheduler built in Java for my operating systems class.","image":"https://opengraph.githubassets.com/1/xdimgg/os-scheduler","language":"Java","languageColor":"#b07219","stars":0,"forks":0},{"owner":"xdimgg","repo":"aoc-solutions","link":"https://github.com/xdimgg/aoc-solutions","description":"My solutions to Advent of Code problems in Python, Rust, and JavaScript.","image":"https://opengraph.githubassets.com/1/xdimgg/aoc-solutions","language":"Python","languageColor":"#3572A5","stars":0,"forks":0}];
+const fallbackPinned = [{"name":"node-steamapi","description":"An object-oriented Steam API wrapper for Node.js developers.","url":"https://github.com/xDimGG/node-steamapi","createdAt":"2017-08-30T03:45:42Z","updatedAt":"2024-01-19T15:16:03Z","openGraphImageUrl":"https://opengraph.githubassets.com/8f786189aa79c8996d739bcc2d51bf6f9b1ebf3df601fcf39a432fb257cc1e34/xDimGG/node-steamapi","forkCount":75,"stargazerCount":158,"primaryLanguage":{"name":"TypeScript"}},{"name":"card-game","description":"A bunch of card games all on one site for you to play with your friends. Built using Vue, Go, and WebSockets.","url":"https://github.com/xDimGG/card-game","createdAt":"2023-02-23T15:21:55Z","updatedAt":"2024-01-10T21:29:25Z","openGraphImageUrl":"https://opengraph.githubassets.com/cc7f07dbb411c8af2b8a423be1fea5f41ee4b8342960d164e9e83b6398ce6158/xDimGG/card-game","forkCount":0,"stargazerCount":1,"primaryLanguage":{"name":"Go"}},{"name":"starboard","description":"A starboard dedicated Discord bot.","url":"https://github.com/xDimGG/starboard","createdAt":"2017-11-19T05:50:33Z","updatedAt":"2023-04-16T18:56:22Z","openGraphImageUrl":"https://opengraph.githubassets.com/2504757f39de50a5fe784ef46956e8dfaca41928c8af84b70ceb760f39edebd3/xDimGG/starboard","forkCount":5,"stargazerCount":22,"primaryLanguage":{"name":"Go"}},{"name":"nn-rust","description":"My attempt to create a multilayer neural network in Rust using stochastic gradient descent, backpropagation, and momentum.","url":"https://github.com/xDimGG/nn-rust","createdAt":"2023-05-29T18:23:24Z","updatedAt":"2023-09-22T15:05:18Z","openGraphImageUrl":"https://opengraph.githubassets.com/0cd414a12b3fd76571aa1a18414746351a64a311e100906f82c76c302527eff9/xDimGG/nn-rust","forkCount":0,"stargazerCount":0,"primaryLanguage":{"name":"Rust"}},{"name":"os-scheduler","description":"An OS scheduler built in Java for my operating systems class.","url":"https://github.com/xDimGG/os-scheduler","createdAt":"2023-03-26T22:37:28Z","updatedAt":"2023-09-22T17:23:15Z","openGraphImageUrl":"https://opengraph.githubassets.com/4c4471bfa3727f212f994de0e7ab98c38a58f384e749b00267aa4412f6db4038/xDimGG/os-scheduler","forkCount":0,"stargazerCount":0,"primaryLanguage":{"name":"Java"}},{"name":"aoc-solutions","description":"My solutions to Advent of Code problems in Python, Rust, and JavaScript.","url":"https://github.com/xDimGG/aoc-solutions","createdAt":"2023-05-29T17:37:13Z","updatedAt":"2023-09-22T15:06:43Z","openGraphImageUrl":"https://opengraph.githubassets.com/93e691050eeb9db4b5fc9588e49b83751afdae65f44c2798a7a08337b9724cb7/xDimGG/aoc-solutions","forkCount":0,"stargazerCount":0,"primaryLanguage":{"name":"Python"}}];
 
 onMount(async () => {
 	for (const el of document.querySelectorAll('[data-animate-left]')) {
@@ -24,7 +24,7 @@ onMount(async () => {
 		}).observe(el);
 	}
 
-	fetch('https://gh-pinned-repos.egoist.dev/?username=xdimgg')
+	fetch('https://pinned-repos.itsmani.workers.dev/xDimGG')
 		.then(res => res.json())
 		.then(j => pinned = j.length > 1 ? j : fallbackPinned)
 		.catch(() => pinned = fallbackPinned);
@@ -106,14 +106,14 @@ register();
 			{#each pinned as pin}
 				<div class="p-2 w-11/12 md:w-1/3">
 					<div class="h-full bg-slate-900 px-8 py-10 rounded-lg overflow-hidden text-center relative">
-						<h2 class="tracking-widest text-xs title-font font-medium mb-1 opacity-80">{@html stylize(pin.language)}</h2>
-						<a class="title-font sm:text-2xl hover:underline text-xl font-medium text-white mb-3" href={pin.link} target="_blank">{pin.repo}</a>
+						<h2 class="tracking-widest text-xs title-font font-medium mb-1 opacity-80">{@html stylize(pin.primaryLanguage.name)}</h2>
+						<a class="title-font sm:text-2xl hover:underline text-xl font-medium text-white mb-3" href={pin.url} target="_blank">{pin.name}</a>
 						<p class="leading-relaxed text-gray-400">{@html stylize(pin.description)}</p>
 						<div class="text-center leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
 							<span class="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1">
 								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="w-4 h-4 mr-1 -mt-0.5" fill="currentColor" stroke="none">
 									<path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" />
-								</svg>{pin.stars}
+								</svg>{pin.stargazerCount}
 							</span>
 						</div>
 					</div>

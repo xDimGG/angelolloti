@@ -1,10 +1,11 @@
 <script>
 export let data;
+
 import { page } from '$app/stores';
 import { browser } from '$app/environment';
 
 $: tag = browser ? $page.url.searchParams.get('tag') : '';
-$: posts = tag ? data.posts.filter(p => p.tags.includes(tag)) : data.posts;
+$: filtered = tag ? data.posts.filter(p => p.tags.includes(tag)) : data.posts;
 </script>
 
 <svelte:head>
@@ -23,7 +24,7 @@ $: posts = tag ? data.posts.filter(p => p.tags.includes(tag)) : data.posts;
 			{/if}
 		</div>
 		<ul class="marker:text-white">
-			{#each posts as { id, title, date, tags }}
+			{#each filtered as { id, title, date, tags }}
 			<li class="text-lg">
 				<a href="/blog/{id}/">{title}</a>
 				<span class="text-slate-400 dark:text-opacity-30 dark:text-white text-xs align-middle">{

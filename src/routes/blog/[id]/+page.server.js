@@ -1,21 +1,11 @@
 import { error } from '@sveltejs/kit';
-import { readdirSync, readFileSync } from 'fs';
-import { join } from 'path';
-import { marked } from 'marked';
+import { posts } from '$lib/posts';
 
-const DIR = './posts/';
-const posts = new Map(readdirSync(DIR).map(f => {
-	const content = readFileSync(join(DIR, f), 'utf-8');
-	const id = f.split('.')[0];
-	const [meta, ...md] = content.split('---\n');
-	const data = JSON.parse(meta);
-
-	return [id, { ...data, content: marked.parse(md.join('---\n')) }];
-}));
+const postMap = new Map(posts.map(c => [c.id, c]));
 
 export const load = async ({ params: { id } }) => {
-	if (posts.has(id))
-		return posts.get(id);
+	if (postMap.has(id))
+		return postMap.get(id);
 
 	error(404, 'Not found');
 }

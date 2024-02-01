@@ -1,6 +1,7 @@
 // from https://github.com/ozh/github-colors/blob/master/colors.json
 
 export const COLORS = {
+	TypeScript: '#3178C6',
 	JavaScript: '#F1E05A',
 	Java: '#B07219',
 	'Node.js': '#F1E05A',

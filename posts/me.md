@@ -41,7 +41,7 @@ I write code. The result of that code is usually in the form of a webpage like t
 ## Bikes
 I like taking things apart and putting them back together. Sometimes I break that thing in the process. I had a fairly rusty 6-year-old mountain bike that was left out in the rain for many college semesters. Here it is after I took it apart, removed a bunch of rust, spray painted some bits, and gave it some new grease, handlebars, pedals, and a chain.
 
-![my mountain bike after repairing it](/bike_post_repair.jpeg)
+![my mountain bike after repairing it](/me_1.jpeg)
 
 I managed to strip all the threads in both crank arms, lose a cable routing plastic bit, and lose a spring in the process. Patched it up with duct tape and the bike rides well. If you need a mechanic, hit me up.
 

@@ -4,7 +4,7 @@ export default [
 		position: 'Software Engineer',
 		location: 'Remote',
 		startDate: 'Jan. 2023',
-		endDate: 'Present',
+		endDate: 'Nov. 2023',
 		points: [
 			'Implemented a seamless authentication flow using React Native and Firebase to allow users to easily sign up',
 			'Demonstrated app progress to sponsors while answering questions directly',
