@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-<atom:link href="https://angelolloti.com/rss.xml" rel="self" type="application/rss+xml" />
-<title>Angelo Lloti</title>
-<link>https://angelolloti.com</link>
-<description>Angelo Lloti's blog about coding, math, and mechanic stuff</description>
-<item>
-<guid>https://angelolloti.com/blog/bdtp</guid>
-<title>Better Done Than Perfect</title>
-<link>https://angelolloti.com/blog/bdtp</link>
-<pubDate>Tue, 30 Jan 2024 17:12:54 GMT</pubDate>
-</item><item>
-<guid>https://angelolloti.com/blog/me</guid>
-<title>Who is Angelo Lloti?</title>
-<link>https://angelolloti.com/blog/me</link>
-<pubDate>Mon, 29 Jan 2024 22:05:15 GMT</pubDate>
-</item>
-</channel>
+  <channel>
+    <atom:link href="https://angelolloti.com/rss.xml" rel="self" type="application/rss+xml" />
+    <title>Angelo Lloti</title>
+    <link>https://angelolloti.com</link>
+    <description>Angelo Lloti's blog about coding, math, and mechanic stuff</description>
+    
+    <item>
+      <guid>https://angelolloti.com/blog/premia</guid>
+      <title>Finding Cheap Flight Tickets With Python</title>
+      <link>https://angelolloti.com/blog/premia</link>
+      <pubDate>Wed, 31 Jan 2024 19:03:42 GMT</pubDate>
+    </item>
+      
+    <item>
+      <guid>https://angelolloti.com/blog/bdtp</guid>
+      <title>Better Done Than Perfect</title>
+      <link>https://angelolloti.com/blog/bdtp</link>
+      <pubDate>Tue, 30 Jan 2024 17:12:54 GMT</pubDate>
+    </item>
+      
+    <item>
+      <guid>https://angelolloti.com/blog/me</guid>
+      <title>Who is Angelo Lloti?</title>
+      <link>https://angelolloti.com/blog/me</link>
+      <pubDate>Mon, 29 Jan 2024 22:05:15 GMT</pubDate>
+    </item>
+      
+  </channel>
 </rss>
