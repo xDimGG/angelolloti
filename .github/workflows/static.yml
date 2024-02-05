@@ -31,4 +31,7 @@ jobs:
           node-version: 20
           cache: 'npm'
       - run: npm ci
+      - run: |
+          git config --global user.email "action@angelolloti.com"
+          git config --global user.name "GH Pages Action"
       - run: npm run deploy
