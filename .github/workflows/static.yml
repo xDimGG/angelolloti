@@ -25,16 +25,13 @@ jobs:
   # Single deploy job since we're just deploying
   deploy:
     runs-on: ubuntu-latest
-    name: Build and Deploy
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 20.3.0
-      - name: Build and Deploy Site
       - run: npm i
       - run: npm run deploy
