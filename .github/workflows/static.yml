@@ -29,12 +29,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Install Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
-          node-version: '20.9.0'
-      - name: Checkout
-        uses: actions/checkout@v4
+          node-version: 20.3.0
       - name: Build and Deploy Site
       - run: npm i
       - run: npm run deploy
