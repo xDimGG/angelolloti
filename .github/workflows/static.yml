@@ -25,6 +25,7 @@ jobs:
   # Single deploy job since we're just deploying
   deploy:
     runs-on: ubuntu-latest
+    name: Build and Deploy
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
