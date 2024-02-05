@@ -12,6 +12,8 @@ jobs:
   build-site:
     runs-on: ubuntu-latest
     name: Create thumbnails, generate files, build site, and deploy to gh-pages
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       - name: Setup Node
