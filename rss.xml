@@ -7,6 +7,13 @@
     <description>Angelo Lloti's blog about coding, math, and mechanic stuff</description>
     
     <item>
+      <guid>https://angelolloti.com/blog/rce</guid>
+      <title>Finding Deals on UberEats with Node.js and GitHub Actions</title>
+      <link>https://angelolloti.com/blog/rce</link>
+      <pubDate>Tue, 06 Feb 2024 17:14:32 GMT</pubDate>
+    </item>
+      
+    <item>
       <guid>https://angelolloti.com/blog/premia</guid>
       <title>Finding Cheap Flight Tickets With Python</title>
       <link>https://angelolloti.com/blog/premia</link>
