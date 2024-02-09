@@ -73,7 +73,7 @@ register();
 	</div>
 
 	<div class="h-screen container mx-auto flex flex-col items-center">
-		<span class="text-5xl text-center sm:text-8xl w-full sm:w-auto sm:mt-10 mb-10 py-4 sm:px-20 text-black bg-white mix-blend-lighten font-bold" data-animate-left>My Websites</span>
+		<span class="text-3xl text-center lg:text-7xl w-full lg:w-auto lg:mt-10 mb-10 py-4 lg:px-20 text-black bg-white mix-blend-lighten font-bold" data-animate-left>My Websites</span>
 		<swiper-container
 			speed="500"
 			loop="true"
@@ -101,7 +101,7 @@ register();
 	</div>
 
 	<div class="h-screen text-gray-600 flex flex-col items-center w-full">
-		<span class="text-5xl text-center sm:text-8xl sm:w-auto sm:mt-10 mb-10 py-4 sm:px-20 text-black bg-white mix-blend-lighten font-bold w-full" data-animate-left>My Projects</span>
+		<span class="text-3xl text-center lg:text-7xl w-full lg:w-auto lg:mt-10 mb-10 py-4 lg:px-20 text-black bg-white mix-blend-lighten font-bold" data-animate-left>My Projects</span>
 		<div class="h-full mx-auto flex flex-wrap flex-col md:flex-row overflow-x-scroll mb-4 container" data-animate-up>
 			{#each pinned as pin}
 				<div class="p-2 w-11/12 md:w-1/3">
@@ -131,11 +131,11 @@ register();
 	</div>
 
 	<div class="h-screen container mx-auto text-gray-400 flex flex-col items-center">
-		<span class="text-5xl text-center sm:text-8xl w-full sm:w-auto sm:mt-10 mb-10 py-4 sm:px-20 text-black bg-white mix-blend-lighten font-bold" data-animate-left>My Experience</span>
+		<span class="text-3xl text-center lg:text-7xl w-full lg:w-auto lg:mt-10 mb-10 py-4 lg:px-20 text-black bg-white mix-blend-lighten font-bold" data-animate-left>My Experience</span>
 		<div class="divide-y-2 divide-gray-500 overflow-y-scroll -mt-2" data-animate-up>
 			{#each experience as job}
-				<div class="py-4 flex flex-wrap md:flex-nowrap">
-					<div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+				<div class="py-4 px-2 flex flex-wrap md:flex-nowrap">
+					<div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-row justify-between w-full md:justify-normal md:flex-col">
 						<span class="font-semibold text-lg title-font text-white">{job.company}</span>
 						<span class="mt-1 text-gray-500 text-sm">{job.startDate} &mdash; {job.endDate}</span>
 					</div>
