@@ -87,7 +87,7 @@ public BinaryWriter writer;
 
 `BinaryWriter` is just a standard .NET class whose documentation can be found [here](https://learn.microsoft.com/en-us/dotnet/api/system.io.binarywriter.write). If we read the documentation, we see that numbers are written using [little endian byte ordering](https://betterexplained.com/articles/understanding-big-and-little-endian-byte-order/). That's enough C# for now. Let's create a man-in-the-middle proxy server.
 
-## Making a MITM Proxy to Decode Messages
+## Making an MITM Proxy to Decode Messages
 
 For those who are not familiar, man-in-the-middle means we will have a server that sits between the client and the server and handles communication. Proxy means we're just passing the information down. What we'll have to do to get this working is start up a legitimate Terraria server on some port, say 7778, and start our proxy server on some other port, say 7777, and have the Terraria client conect to our proxy on port 7777. The proxy will receive data from the client and send it to the server and vice versa.
 
