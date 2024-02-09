@@ -7,6 +7,13 @@
     <description>Angelo Lloti's blog about coding, math, and mechanic stuff</description>
     
     <item>
+      <guid>https://angelolloti.com/blog/trust-1</guid>
+      <title>Exploring Terraria's Server Protocol (trust pt. 1)</title>
+      <link>https://angelolloti.com/blog/trust-1</link>
+      <pubDate>Fri, 09 Feb 2024 14:49:32 GMT</pubDate>
+    </item>
+      
+    <item>
       <guid>https://angelolloti.com/blog/rce</guid>
       <title>Finding Deals on UberEats with Node.js and GitHub Actions</title>
       <link>https://angelolloti.com/blog/rce</link>
