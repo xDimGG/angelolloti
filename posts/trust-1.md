@@ -278,4 +278,4 @@ Exiting and re-entering a chest gives us 999 of what we put in, even if the item
 
 ## Conclusion
 
-We have a lot of work cut out for us. We have to handle [world (.wld) files](https://fileformat.fandom.com/wiki/WLD). We may even have to implement world generation! Or copy it if we're lazy. We may have to parse user files. We have a lot of different packet types to implement. Maybe even fluid simulation. Did you think this would be easy?? Anyway, thanks for reading. See you in part 2.
+We have a lot of work cut out for us. We have to handle [world (.wld) files](https://fileformat.fandom.com/wiki/WLD). We may even have to implement world generation! Or copy it if we're lazy. We may have to parse user files. We have a lot of different packet types to implement. Maybe even fluid simulation. Did you think this would be easy?? Anyway, thanks for reading. See you in [part 2](/blog/trust-2).

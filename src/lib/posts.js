@@ -19,8 +19,8 @@ const DIR = './posts/';
 export const posts = readdirSync(DIR).map(f => {
 	const content = readFileSync(join(DIR, f), 'utf-8');
 	const id = f.split('.')[0];
-	const [meta, ...md] = content.split('---\n');
+	const [meta, ...md] = content.split('\n---');
 	const data = JSON.parse(meta);
 
-	return { id, content, html: marked.parse(md.join('---\n')), ...data };
+	return { id, content, html: marked.parse(md.join('\n---')), ...data };
 }).sort((a, b) => b.date - a.date);
