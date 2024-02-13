@@ -7,6 +7,13 @@
     <description>Angelo Lloti's blog about coding, math, and mechanic stuff</description>
     
     <item>
+      <guid>https://angelolloti.com/blog/trust-2</guid>
+      <title>Writing Sweet Rust Macros (trust pt. 2)</title>
+      <link>https://angelolloti.com/blog/trust-2</link>
+      <pubDate>Mon, 12 Feb 2024 21:51:49 GMT</pubDate>
+    </item>
+      
+    <item>
       <guid>https://angelolloti.com/blog/trust-1</guid>
       <title>Exploring Terraria's Server Protocol (trust pt. 1)</title>
       <link>https://angelolloti.com/blog/trust-1</link>
