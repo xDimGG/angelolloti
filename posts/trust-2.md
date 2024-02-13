@@ -1,6 +1,6 @@
 {
 	"title": "Writing Sweet Rust Macros (trust pt. 2)",
-	"date": 1707774709393,
+	"date": 1707829348111,
 	"tags": ["trust", "rust", "macros"]
 }
 ---
@@ -345,7 +345,7 @@ error[E0512]: cannot transmute between types of different sizes, or dependently-
 For more information about this error, try `rustc --explain E0512`.
 ```
 
-After a Google search, [this error](https://users.rust-lang.org/t/error-compiling-old-rust-project/83840) meant that one of my dependencies is outdated. That dependency turned out to be syn. I was on v1 and needed v2. I upgraded syn to v2, only to find out that the API has slightly changed so some lines were erroring. Because of that, I more or less had to re-understand my entire macro code again, which I really didn't want to do. Anyway, I did it, fixed it, and I consider myself a better man because of it.
+After a Google search, [this error](https://users.rust-lang.org/t/error-compiling-old-rust-project/83840) meant that one of my dependencies is outdated. That dependency turned out to be syn. I was on v1 and needed v2. I upgraded syn to v2, only to find out that the API has slightly changed so some lines were erroring. Because of that, I more or less had to re-understand my entire macro code again, which I really didn't want to do. Anyway, I did that and fixed it.
 
 However, this got me to thinking. Is there a way I could have made this code more readable? Well, not really. I think proc macros are generally quite hard to read without comments. I could and should probably add a bunch of comments to the code so that future me who was to re-visit this has at least a clue of what's going on... nahhh. Comments are for chumps.
 
