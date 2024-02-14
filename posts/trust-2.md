@@ -45,16 +45,16 @@ You get the gist? Anyway, my goal was to be able to write a Rust enum representi
 pub enum Message<'a> {
 	/// 3 ->
 	ConnectionApprove {
-		pub client_id: u8,
-		pub flag: bool,
+		client_id: u8,
+		flag: bool,
 	},
 	/// 5 <->
 	PlayerInventorySlot {
-		pub client_id: u8,
-		pub slot_id: i16,
-		pub amount: i16,
-		pub prefix: u8,
-		pub item_id: i16,
+		client_id: u8,
+		slot_id: i16,
+		amount: i16,
+		prefix: u8,
+		item_id: i16,
 	},
 }
 ```
@@ -89,11 +89,11 @@ fn buffer_to_message(buf: &[u8]) -> Message {
 	let code = r.read_byte();
 	match code {
 		5 => Message::PlayerInventorySlot(PlayerInventorySlot {
-			pub client_id: r.read_byte(),
-			pub slot_id: r.read_i16(),
-			pub amount: r.read_i16(),
-			pub prefix: r.read_byte(),
-			pub item_id: r.read_i16(),
+			client_id: r.read_byte(),
+			slot_id: r.read_i16(),
+			amount: r.read_i16(),
+			prefix: r.read_byte(),
+			item_id: r.read_i16(),
 		}),
 		_ => Message::Unknown(code, &buf[1..])
 	}
@@ -302,7 +302,11 @@ let mut variants = Vec::new();
 
 for variant in input.variants {
 	if let Fields::Named(fields) = variant.fields {
-		let fields = fields.named.iter(); // get the fields
+		let fields = fields.named.iter().map(|e| {
+			let ident = &e.ident;
+			let ty = &e.ty;
+			quote!{ pub #ident: #ty }
+		}); // get the fields and make them public
 		let name = variant.ident; // get the name of the variant
 		structs.push(quote! {
 			#[derive(Debug, Clone)]
