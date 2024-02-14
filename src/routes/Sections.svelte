@@ -78,7 +78,7 @@ register();
 			speed="500"
 			loop="true"
 			slides-per-view="1"
-			class="max-w-full sm:w-5/6 min-h-0 h-full max-h-full self-start pb-5"
+			class="max-w-full w-full min-h-0 h-full max-h-full self-start pb-5"
 			pagination={true}
 			autoplay-delay={4000}
 			style="--swiper-pagination-color: white; --swiper-pagination-bullet-size: 12px; --swiper-pagination-bottom: 0px"
@@ -88,7 +88,7 @@ register();
 			{#each works as work}
 				<swiper-slide class="flex justify-center">
 					<div class="max-h-full w-full bg-cover bg-center" style="background-image: url({work.image})">
-						<div class="bg-black bg-opacity-80 p-5 w-full md:h-full md:w-1/4 self-end">
+						<div class="bg-black bg-opacity-95 p-5 w-full md:h-full md:w-1/4 self-end">
 							<a href={work.href} target="_blank" class="text-4xl space-x-2 text-white font-bold hover:underline">
 								{work.name}<svg xmlns="http://www.w3.org/2000/svg" class="inline ml-2" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg>
 							</a>
@@ -102,7 +102,7 @@ register();
 
 	<div class="h-screen text-gray-600 flex flex-col items-center w-full">
 		<span class="text-3xl text-center lg:text-7xl w-full lg:w-auto lg:mt-10 mb-10 py-4 lg:px-20 text-black bg-white mix-blend-lighten font-bold" data-animate-left>My Projects</span>
-		<div class="h-full mx-auto flex flex-wrap flex-col md:flex-row overflow-x-scroll mb-4 container" data-animate-up>
+		<div class="h-full mx-auto flex flex-wrap flex-col md:flex-row overflow-x-auto mb-4 container" data-animate-up>
 			{#each pinned as pin}
 				<div class="p-2 w-11/12 md:w-1/3">
 					<div class="h-full bg-slate-900 px-8 py-10 rounded-lg overflow-hidden text-center relative">
@@ -132,7 +132,7 @@ register();
 
 	<div class="h-screen container mx-auto text-gray-400 flex flex-col items-center">
 		<span class="text-3xl text-center lg:text-7xl w-full lg:w-auto lg:mt-10 mb-10 py-4 lg:px-20 text-black bg-white mix-blend-lighten font-bold" data-animate-left>My Experience</span>
-		<div class="divide-y-2 divide-gray-500 overflow-y-scroll -mt-2" data-animate-up>
+		<div class="divide-y-2 divide-gray-500 overflow-y-auto -mt-2" data-animate-up>
 			{#each experience as job}
 				<div class="py-4 px-2 flex flex-wrap md:flex-nowrap">
 					<div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-row justify-between w-full md:justify-normal md:flex-col">
