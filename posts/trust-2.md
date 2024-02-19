@@ -353,4 +353,4 @@ After a Google search, [this error](https://users.rust-lang.org/t/error-compilin
 
 However, this got me to thinking. Is there a way I could have made this code more readable? Well, not really. I think proc macros are generally quite hard to read without comments. I could and should probably add a bunch of comments to the code so that when future me has to re-visit this, he'll at least have a clue of what's going on... nahhh. Comments are for chumps.
 
-Anyway, that's all for now. Until we meet again in part 3.
+Anyway, that's all for now. Until we meet again in [part 3](/blog/trust-3).
