@@ -7,6 +7,13 @@
     <description>Angelo Lloti's blog about coding, math, and mechanic stuff</description>
     
     <item>
+      <guid>https://angelolloti.com/blog/trust-3</guid>
+      <title>Parsing Terraria's .wld Files (trust pt. 3)</title>
+      <link>https://angelolloti.com/blog/trust-3</link>
+      <pubDate>Mon, 19 Feb 2024 17:44:02 GMT</pubDate>
+    </item>
+      
+    <item>
       <guid>https://angelolloti.com/blog/trust-2</guid>
       <title>Writing Sweet Rust Macros (trust pt. 2)</title>
       <link>https://angelolloti.com/blog/trust-2</link>
