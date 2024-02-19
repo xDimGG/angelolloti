@@ -5,7 +5,7 @@
 }
 ---
 
-Welcome to part three of my journey through writing a Terraria game server in Rust. Since [part 2](/blog/part-2), I've gotten the client to be able to enter a password and begin to connect.
+Welcome to part three of my journey through writing a Terraria game server in Rust. Since [part 2](/blog/trust-2), I've gotten the client to be able to enter a password and begin to connect.
 
 ## Protocol Recap
 
