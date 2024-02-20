@@ -1,7 +1,7 @@
 {
 	"title": "Parsing Terraria's .wld Files (trust pt. 3)",
 	"date": 1708364642136,
-	"tags": ["trust", "rust", "binary"]
+	"tags": ["trust", "rust", "reverse-engineering", "binary"]
 }
 ---
 
