@@ -19,7 +19,7 @@ export let data;
 </svelte:head>
 
 <div class="min-h-screen w-full dark:bg-slate-900 px-3 py-8">
-	<div class="prose prose-img:max-h-[80vh] prose-img:mx-auto prose-gray dark:prose-invert lg:max-w-[1000px] mx-auto">
+	<div class="prose prose-img:max-h-[80vh] prose-img:mx-auto prose-code:break-words prose-gray dark:prose-invert lg:max-w-[1000px] mx-auto">
 		<div class="flex justify-between">
 			<h1 class="mb-0">{data.title}</h1>
 			<div class="block text-xs text-right text-opacity-50 shrink-0 ml-2">
