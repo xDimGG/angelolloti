@@ -402,4 +402,4 @@ which decompresses any packets containing tile data.
 
 ## Closing Notes
 
-So, we have our world and we can move around in it. We can even break blocks, but breaking stuff doesn't drop anything. In fact, everything we're doing is only on the client side. In order to support block-breaking and whatnot, we'll need to mutate the world object. We'll also have to be able to save the world, which means doing everything we just did in reverse. We've come a lot further than what I though would be possible! Everything from here should be smooth sailing. See you again in part 4!
+So, we have our world and we can move around in it. We can even break blocks, but breaking stuff doesn't drop anything. In fact, everything we're doing is only on the client side. In order to support block-breaking and whatnot, we'll need to mutate the world object. We'll also have to be able to save the world, which means doing everything we just did in reverse. We've come a lot further than what I though would be possible! Everything from here should be smooth sailing. See you again in [part 4](/blog/trust-4)!
