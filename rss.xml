@@ -7,6 +7,13 @@
     <description>Angelo Lloti's blog about coding, math, and mechanic stuff</description>
     
     <item>
+      <guid>https://angelolloti.com/blog/trust-4</guid>
+      <title>Converting C# to Rust with Tree-Sitter and Python (trust pt. 4)</title>
+      <link>https://angelolloti.com/blog/trust-4</link>
+      <pubDate>Fri, 08 Mar 2024 22:21:15 GMT</pubDate>
+    </item>
+      
+    <item>
       <guid>https://angelolloti.com/blog/trust-3</guid>
       <title>Parsing Terraria's .wld Files (trust pt. 3)</title>
       <link>https://angelolloti.com/blog/trust-3</link>
