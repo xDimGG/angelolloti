@@ -5,4 +5,4 @@
 }
 ---
 
-This would have been incredibly annoying to write as a blog post, so I made a YouTube video instead of a text-based post. The video is avaiable at [https://youtu.be/u34swkMXJQw](https://youtu.be/u34swkMXJQw). Enjoy!
+This would have been incredibly annoying to write as a blog post, so I made a YouTube video instead of a text-based post. The video is available at [https://youtu.be/u34swkMXJQw](https://youtu.be/u34swkMXJQw). Enjoy!
