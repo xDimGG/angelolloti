@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DOE Add Zip Code to Search Results
 // @namespace    https://angelolloti.com/
-// @version      1.0.0
+// @version      1.1.0
 // @description  Automatically insert zip codes for schools that are missing them
 // @author       Angelo Lloti
 // @match        https://www.opt-osfns.org/dsf/schools/schoolContactSearch
@@ -32,5 +32,14 @@ setInterval(() => {
 
         const newName = schools[convert(nameEl.innerText)];
         if (newName && el.innerText !== newName) el.innerText = newName;
+    } catch (err) { console.error(err); }
+}, 50);
+
+setInterval(() => {
+    try {
+        const el = document.querySelector('.Detail > .bInfo > tbody > tr > .tSecondColumn:has(#hlMap) > a:nth-child(2)');
+        if (!el) return;
+
+        el.href = `https://www.google.com/maps?q=${encodeURIComponent(el.innerText)}`;
     } catch (err) { console.error(err); }
 }, 50);
