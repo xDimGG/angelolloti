@@ -17,4 +17,10 @@ export default [
 		description: 'A website so that the people at Recurse Center can quickly see all the nearby BOGO deals that UberEats has to offer nearby.',
 		image: '/rc-eats.png',
 	},
+	{
+		name: 'Link Art',
+		href: 'https://link-art.com/',
+		description: 'A commercial website for a permanent jewelry business built using pure HTML, CSS, JavaScript, Go, and GitHub Pages.',
+		image: '/link-art.png',
+	},
 ];
