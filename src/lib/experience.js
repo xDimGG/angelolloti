@@ -1,10 +1,22 @@
 export default [
 	{
+		company: 'Technician',
+		position: 'Tri-Star Plumbing & Heating',
+		location: 'Staten Island, NY',
+		startDate: 'Mar. 2024',
+		endDate: 'Present',
+		points: [
+			'Developed a Python script to automate the filling of common documents, effectively increasing operational efficiency',
+			'Reverse-engineered the JSON REST API of the job platform used by the company, enabling the integration of custom-built automation tools, which significantly improved job tracking and resource allocation efficiency',
+			'Engineered a solution utilizing Google Cloud’s OCR API and OpenAI’s API to extract critical data from documents like invoices and receipts, converting them into a structured Excel spreadsheet, thereby improving data management and reducing manual data entry errors',
+		],
+	},
+	{
 		company: 'Recurse Center',
 		position: 'Participant',
 		location: 'Brooklyn, NY',
 		startDate: 'Jan. 2024',
-		endDate: 'Present',
+		endDate: 'Mar. 2024',
 		points: [
 			'Worked on porting and thoroughly testing an NPM library that is now used by thousands of people weekly',
 			'Created a web app which utilizes GitHub Actions to periodically scrape UberEats for nearby deals',
@@ -18,7 +30,7 @@ export default [
 		position: 'Software Engineer',
 		location: 'Remote',
 		startDate: 'Jan. 2023',
-		endDate: 'Nov. 2023',
+		endDate: 'Jan. 2024',
 		points: [
 			'Implemented a seamless authentication flow using React Native and Firebase to allow users to easily sign up',
 			'Demonstrated app progress to sponsors while answering questions directly',
