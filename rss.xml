@@ -7,6 +7,13 @@
     <description>Angelo Lloti's blog about coding, math, and mechanic stuff</description>
     
     <item>
+      <guid>https://angelolloti.com/blog/mechanic</guid>
+      <title>My Mechanic Journal</title>
+      <link>https://angelolloti.com/blog/mechanic</link>
+      <pubDate>Tue, 18 Jun 2024 01:38:43 GMT</pubDate>
+    </item>
+      
+    <item>
       <guid>https://angelolloti.com/blog/trust-4</guid>
       <title>Converting C# to Rust with Tree-Sitter and Python (trust pt. 4)</title>
       <link>https://angelolloti.com/blog/trust-4</link>
