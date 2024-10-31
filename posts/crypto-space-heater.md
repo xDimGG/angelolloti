@@ -121,7 +121,7 @@ while True:
 
 Now, let's make this script run at startup in the background. I was trying to get this working using Systemctl, but I simply could not. I turned to [this book](https://github.com/thagrol/Guides/blob/main/boot.pdf) which provides an incredibly simple way to use cron for this task. 
 
-![how to schedule a boot script with crontab](crypto_2.png)
+![how to schedule a boot script with crontab](/crypto_2.png)
 
 After all that, I restarted the rig and it worked as intended. Short cycling turned out not to be a problem. This is because even after the miner stops running, the card still holds a lot of thermal energy. Since the card regulates its fans at all times, the card's fans will continue to run for a few minutes, allowing the room to get just a little bit hotter even after the miner has stopped. Additionally, this rig still uses ~400W at idle, which is a pretty good amount to maintain the room's temperature.
 
