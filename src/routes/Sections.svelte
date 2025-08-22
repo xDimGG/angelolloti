@@ -47,10 +47,10 @@ register();
 				<p class="text-2xl opacity-0 hidden md:block">.</p>
 				<p class="text-2xl opacity-0 hidden md:block">.</p>
 				<p class="text-2xl opacity-0">.</p>
-				<p class="text-green-400 text-4xl md:text-6xl animation-fadein animation__fadeInRight animation-1 pb-3 font-bold">Angelo Lloti</p>
-				<p class="text-slate-400 text-2xl animation-fadein animation-2 indent-2">Software Developer</p>
-				<p class="text-slate-400 text-opacity-70 text-2xl animation-fadein animation-3 indent-2">Technology Enthusiast</p>
-				<p class="text-slate-400 text-opacity-50 text-2xl animation-fadein animation-4 indent-2">Website Designer</p>
+				<p class="text-green-400 text-4xl md:text-6xl animation-fadein animation__fadeInRight animation-1 pb-3 font-bold">K&L Engineering</p>
+				<p class="text-slate-400 text-2xl animation-fadein animation-2 indent-2">Software Development</p>
+				<p class="text-slate-400 text-opacity-70 text-2xl animation-fadein animation-3 indent-2">Hardware Design</p>
+				<p class="text-slate-400 text-opacity-50 text-2xl animation-fadein animation-4 indent-2">Engineering Consulting</p>
 			</div>
 			<div class="max-w-[80%] md:max-h-[60vh] animation-fadein animation-1 md:animation-2 links">
 				<img src="/me.jpeg" alt="Angelo Lloti" class="shadow-[0_0_40px_-10px_#e0e2e6] w-100% max-h-[50vh] md:max-h-[60vh] rounded-full relative z-10">
