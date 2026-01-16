@@ -130,7 +130,7 @@ register();
 		</div>
 	</div>
 
-	<div class="h-screen container mx-auto text-gray-400 flex flex-col items-center">
+	<!-- <div class="h-screen container mx-auto text-gray-400 flex flex-col items-center">
 		<span class="text-3xl text-center lg:text-7xl w-full lg:w-auto lg:mt-10 mb-10 py-4 lg:px-20 text-black bg-white mix-blend-lighten font-bold" data-animate-left>My Experience</span>
 		<div class="divide-y-2 divide-gray-500 overflow-y-auto -mt-2" data-animate-up>
 			{#each experience as job}
@@ -150,7 +150,7 @@ register();
 				</div>
 			{/each}
 		</div>
-	</div>
+	</div> -->
 
 	<!-- <div class="h-screen container mx-auto text-gray-400 flex flex-col items-center">
 		<span class="text-5xl text-center sm:text-8xl w-full sm:w-auto sm:mt-10 mb-10 py-4 sm:px-20 text-black bg-white mix-blend-lighten font-bold" data-animate-left>Contact Me</span>
